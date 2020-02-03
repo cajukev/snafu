@@ -1,0 +1,84 @@
+*{
+  box-sizing: border-box;
+  filter: none ;
+}
+html, .page1, .page2, .page3 {
+  scroll-snap-type: y proximity;
+  scrollbar-width: none;
+}
+body{
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.lazyload{
+  opacity: 0;
+  transition: all 1s ease;
+}
+html{
+  scroll-behavior: smooth;
+}
+$margLeft: 7.5vw;
+@mixin neuShadows {
+  filter: drop-shadow(4px 4px 4px rgba(0,0,0,0.45)) drop-shadow(-4px -4px 4px rgba(255, 255, 255, 0.301)) ; 
+}
+@mixin neuSmall {
+  filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.25)) drop-shadow(-4px -2px 2px rgba(255, 255, 255, 0.178)) ; 
+}
+@mixin textSmall{
+  font-size: calc(1vh + 1vw);
+}
+@mixin textMed{
+  font-size: calc(1.25vh + 1.25vw);
+}
+@mixin textBig{
+  font-size: calc(2vh + 2vw);
+}
+@mixin textTitle{
+  font-size: calc(5vh + 5vw);
+  color:#BC7A16 ;
+  font-family: "wallpoet";
+}
+@keyframes fadeIn{
+  to{
+    opacity: 1;
+  }
+}
+@keyframes fadeOut{
+  to{
+    opacity: 0;
+  }
+}
+/* scrollbar */
+
+p{
+  margin-block: 0;
+  font-family: 'montserrat';
+}
+b{
+  filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.233));
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Wallpoet';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Wallpoet'), url(https://fonts.gstatic.com/s/wallpoet/v11/f0X10em2_8RnXVVdUObp58Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
