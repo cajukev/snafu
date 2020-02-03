@@ -8,7 +8,7 @@ export default {
     htmlAttrs: {
       lang: 'zh-Hant',
     },
-    title: process.env.npm_package_name || 'KBWeb',
+    title: process.env.npm_package_name || 'Snafu',
     meta: [
       { charset: 'utf-8' },
       { name: 'theme-color', content: '#003d76' },

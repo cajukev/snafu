@@ -255,6 +255,7 @@ export default {
     }
   }
   & .readMore {
+    cursor: pointer;
     grid-column: 1 / span 2;
     align-self: end;
     display: flex;
