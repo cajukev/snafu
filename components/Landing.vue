@@ -155,15 +155,21 @@
     </svg>
     <div class="titleBrief">
       <p class="landingTitle">SN:AFU</p>
-      <p class="landingBrief">2D Platformer - Global Game Jam 2020</p>
+      <p class="landingBrief"><b>2D Platformer - Global Game Jam 2020</b></p>
     </div>
     <div class="downloadBrief">
-      <a href="https://drive.google.com/file/d/1ATqks0GvJ9yWa7qMwBldi5iisk7vxDXb/view" class="dlButton" target="_blank"><div>Download</div></a>
+      <a
+        href="https://drive.google.com/file/d/1ATqks0GvJ9yWa7qMwBldi5iisk7vxDXb/view"
+        class="dlButton"
+        target="_blank"
+      >
+        <div>Download</div>
+      </a>
       <div class="dlBrief">(24 Mb)</div>
     </div>
 
     <p class="landingText">
-      <b>Take control of our friendly antivirus D-B0G</b>, as he is sent on a mission to restore the motherboard's sacred relics while avoiding the evil viruses.
+      Take control of our friendly antivirus D-B0G, as he is sent on a mission to restore the motherboard's sacred relics while avoiding the evil viruses.
     </p>
     <div class="readMore" v-on:click="scrollTo(1)">
       <ArrowCircle class="arrowCircle" />
@@ -184,7 +190,7 @@ export default {
       var scrollTargets = document.querySelectorAll(".section");
       var toScroll = scrollTargets[target].offsetTop;
       window.scrollTo(0, toScroll);
-    },
+    }
   }
 };
 </script>
@@ -194,8 +200,8 @@ export default {
 .LandingTemplate {
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 1fr 1fr 0.6fr;
+  //grid-template-columns: 1fr 2fr;
+  //grid-template-rows: 1fr 1fr 1fr 0.6fr;
   padding-top: 10vh;
   padding-bottom: 5vh;
   margin-left: 10vw;
@@ -217,7 +223,7 @@ export default {
     }
   }
   & .landingText {
-    @include textMed;
+    font-size: $calc1-5;
     font-family: "montserrat";
     grid-column: 1 / span 2;
     grid-row: 3 / span 1;
@@ -229,23 +235,25 @@ export default {
     align-self: center;
     text-align: center;
     & .landingTitle {
-      @include textTitle;
-      @include neuShadows;
+      font-size: $calc5;
+      color: #bc7a16;
+      font-family: "wallpoet";
+      @include neuSmall;
     }
     & .landingBrief {
-      @include textSmall;
+      font-size: $calc1;
       font-family: "montserrat";
     }
   }
-  & .downloadBrief{
+  & .downloadBrief {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    & .dlButton{
-      @include textSmall;
+    & .dlButton {
+      font-size: $calc1;
       @include neuShadows;
-      font-family: 'montserrat';
+      font-family: "montserrat";
       background: #416271;
       color: white;
       text-align: center;
@@ -262,26 +270,86 @@ export default {
     flex-direction: row;
     align-items: center;
     & p {
-      @include textSmall;
+      font-size: $calc1-5;
       margin-left: 1em;
       color: #406270;
+    }
+    & .arrowCircle {
+      width: calc(3vh + 3vw);
+      height: calc(3vh + 3vw);
     }
   }
 }
 
-@media (orientation: landscape) {
-  /*Landscape tablet, Laptop, Desktop*/
-  .LandingTemplate {
-    max-width: 100%;
-  }
-}
 @media (orientation: portrait) {
   /* Phones,  Portrait tablets */
+  .LandingTemplate {
+    grid-template-rows: 1fr 3fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
+    padding-top: 5vh;
+    margin-left: 5vw;
+  margin-right: 5vw;
+    & .debug {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 1;
+      align-self: center;
+      justify-self: center;
+      animation: debugAnimRight 2s ease-in-out forwards;
+      & .wheel {
+      animation: wheelAnim2 2s linear infinite;
+    }
+    }
+    & .landingText {
+      font-size: $calc1-5;
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+      padding-right: 5vw;
+      line-height: 150%;
+    }
+    & .downloadBrief {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 2;
+      & .dlButton {
+        font-size: $calc1-75;
+        width: 70%;
+      }
+    }
+    & .titleBrief {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+      & .landingBrief {
+        font-size: $calc1-5;
+      }
+    }
+    & .readMore {
+      height: 100%;
+      grid-column: 1 / span 2;
+      align-self: center;
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      & .arrowCircle {
+        width: calc(4.5vh + 4.5vw);
+        height: calc(4.5vh + 4.5vw);
+      }
+      & p {
+        font-size: $calc1-75;
+        margin-left: 0;
+        margin-bottom: 1vh;
+        color: #406270;
+      }
+    }
+  }
 }
 
 @keyframes wheelAnim {
   to {
     transform: rotate(360deg);
+  }
+}
+@keyframes wheelAnim2 {
+  to {
+    transform: rotate(-360deg);
   }
 }
 @keyframes bodyAnim {
@@ -292,6 +360,11 @@ export default {
 @keyframes debugAnim {
   from {
     transform: translateX(-30vw);
+  }
+}
+@keyframes debugAnimRight {
+  from {
+    transform: translateX(30vw);
   }
 }
 </style>

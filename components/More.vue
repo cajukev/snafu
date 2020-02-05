@@ -203,7 +203,7 @@ export default {
     animation: debugAnim2 1s ease-in-out alternate infinite;
   }
   & .landingText {
-    @include textMed;
+    font-size: $calc1-5;
     font-family: "montserrat";
     grid-column: 1 / span 2;
     grid-row: 2 / span 1;
@@ -215,11 +215,13 @@ export default {
     align-self: center;
     text-align: center;
     & .landingTitle {
-      @include textTitle;
-      @include neuShadows;
+      font-size: $calc5;
+      color: #bc7a16;
+      font-family: "wallpoet";
+      @include neuSmall;
     }
     & .landingBrief {
-      @include textSmall;
+      font-size: $calc1;
       font-family: "montserrat";
     }
   }
@@ -229,7 +231,7 @@ export default {
     align-items: center;
     justify-content: center;
     & .dlButton{
-      @include textSmall;
+      font-size: $calc1;
       @include neuShadows;
       font-family: 'montserrat';
       background: #416271;
@@ -245,7 +247,7 @@ export default {
     grid-row: 1 / span 1;
     align-self: start;
     & p {
-      @include textBig;
+      font-size: $calc3;
       color: #406270;
     }
   }

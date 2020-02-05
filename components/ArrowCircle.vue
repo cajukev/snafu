@@ -1,7 +1,7 @@
 <template>
   <div class="circle">
     <svg class="arrow" viewBox="0 0 50 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 3L26.4128 20L47 3" stroke="#406270" stroke-width="7"/>
+<path d="M3 3L26.4128 20L47 3" stroke="#DCDCDC" stroke-width="7"/>
 </svg>
 
   </div>
@@ -20,7 +20,7 @@ export default {
     width: calc(3vh + 3vw);
     height: calc(3vh + 3vw);
     border-radius: 50%;
-    background: #DCDCDC;
+    background: #406270;
     display: flex;
     align-items: center;
     justify-content: center;

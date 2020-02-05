@@ -1,10 +1,11 @@
 <template>
   <div class="TeamTemplate">
-    <div class="TeamTitle">
+    <div class="TeamTitle ">
       <p>
-        <b>Team - Les Petits Amis</b>
+        <b>Team</b> <br> <span>Les Petits Amis</span>
       </p>
     </div>
+
     <div class="teamMember">
       <p class="titleName">
         <b>Visual Asset Creator: Ezrie</b>
@@ -67,28 +68,55 @@ export default {};
 <style lang = 'scss'>
 @import "./assets/main.scss";
 .TeamTemplate {
-  margin-top: 10vh;
+  margin-top: 5vh;
   margin-bottom: 5vh;
   margin-left: 10vw;
   margin-right: 10vw;
   & .TeamTitle {
-    @include textBig;
+    padding-top: 5vh;
+    font-size: $calc3;
     color: #406270;
+    & span{
+      font-size: $calc3
+    }
   }
   & .teamMember {
     margin-top: 10vh;
     & .titleName {
-        @include textSmall;
+        font-size: $calc1;
     }
     & .contactInfo {
-        @include textSmall;
+        font-size: $calc1;
       color: #406270;
       margin-top: 0.5em;
     }
     & .quote {
-        @include textMed;
+        font-size: $calc1-5;
       margin-top: 1.5em;
     }
+  }
+}
+@media (orientation: portrait ) {
+  .TeamTemplate{
+    & .TeamTitle{
+      text-align: center;
+      font-size: $calc3-5;
+    }
+    & .teamMember {
+    margin-top: 10vh;
+    & .titleName {
+        font-size: $calc2;
+    }
+    & .contactInfo {
+        font-size: $calc1-5;
+      color: #406270;
+      margin-top: 0.5em;
+    }
+    & .quote {
+        font-size: $calc2;
+      margin-top: 1.5em;
+    }
+  }
   }
 }
 </style>

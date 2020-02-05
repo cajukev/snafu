@@ -25,20 +25,35 @@ $margLeft: 7.5vw;
 @mixin neuSmall {
   filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.25)) drop-shadow(-4px -2px 2px rgba(255, 255, 255, 0.178)) ; 
 }
-@mixin textSmall{
-  font-size: calc(1vh + 1vw);
+
+$calc1: calc( 1vh + 1vw );
+$calc1-25: calc( 1.25vh + 1.25vw );
+$calc1-5: calc( 1.5vh + 1.5vw );
+$calc1-75: calc( 1.75vh + 1.75vw );
+$calc2: calc( 2vh + 2vw );
+$calc2-5: calc( 2.5vh + 2.5vw );
+$calc3: calc( 3vh + 3vw );
+$calc3-5: calc( 3.5vh + 3.5vw );
+$calc4: calc( 4vh + 4vw );
+$calc5: calc( 5vh + 5vw );
+
+
+
+
+@media (orientation: landscape){  
+  .portrait{
+    display: none;
+  }
 }
-@mixin textMed{
-  font-size: calc(1.25vh + 1.25vw);
+@media (orientation: portrait){
+  .landscape{
+    display: none;
+  }
 }
-@mixin textBig{
-  font-size: calc(2vh + 2vw);
-}
-@mixin textTitle{
-  font-size: calc(5vh + 5vw);
-  color:#BC7A16 ;
-  font-family: "wallpoet";
-}
+
+
+
+
 @keyframes fadeIn{
   to{
     opacity: 1;
@@ -49,7 +64,6 @@ $margLeft: 7.5vw;
     opacity: 0;
   }
 }
-/* scrollbar */
 
 p{
   margin-block: 0;
@@ -58,6 +72,11 @@ p{
 b{
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.233));
 }
+
+
+
+
+
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
