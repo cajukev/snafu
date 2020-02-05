@@ -99,7 +99,6 @@ export default {
   margin-top: 0;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  overflow-x: visible;
   width: 100%;
 }
 .topHalfIntersect {
@@ -110,7 +109,7 @@ export default {
 .mainBG {
   position: fixed;
   top: 0vh;
-  height: 100vh;
+  height: 150vh;
   width: 100%;
   background: #dcdcdc;
   z-index: -1;
@@ -119,6 +118,7 @@ export default {
   position: absolute;
   right: 0vw;
   width: 80vw;
+
 }
 @media (orientation: landscape) {
   /*Landscape tablet, Laptop, Desktop*/
@@ -129,6 +129,8 @@ export default {
     width: 100%;
     left: 0;
     z-index: 1;
+      overflow-x: hidden;
+
   }
   .appNavComponent {
     z-index: 2;
